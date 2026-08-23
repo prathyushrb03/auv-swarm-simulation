@@ -1,0 +1,15 @@
+2x: 
+- Revolute (thrust vectoring)
+    - Revolute (propeller)
+        - Propeller model
+2:
+ - Revolute (fins - vertical)
+ - Revolute (fins - horizontal)
+
+- ballast tank
+
+- camera
+
+- lidar
+
+- acoustic and laser communication
