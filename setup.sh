@@ -1,6 +1,6 @@
 # building
 source /opt/ros/jazzy/setup.bash
-source /mnt/data/projects/ros2_ccir/underwater_drone_research/auv_swarm_bot/install/setup.bash
+source install/setup.bash
 colcon build
 
 # launching the AUV in gazebo
