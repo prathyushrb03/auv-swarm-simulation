@@ -9,7 +9,7 @@ sl.declare_arg('camera', True)
 sl.declare_arg('gazebo_world_name', 'none')
 
 # initial pose
-sl.declare_gazebo_axes(x=1., y=0., z=1., roll=0.,pitch=0., yaw=0.)
+sl.declare_gazebo_axes(x=1., y=1., z=60., roll=0.,pitch=0., yaw=0.)
 
 
 def launch_setup():

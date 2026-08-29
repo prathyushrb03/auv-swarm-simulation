@@ -1,0 +1,747 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.8">
+    <world name="forest_world">
+        <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics" />
+        <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands" />
+        <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster" />
+        <physics name="1ms" type="ode">
+            <max_step_size>0.001</max_step_size>
+            <real_time_factor>1.0</real_time_factor>
+        </physics>
+        <gravity>0 0 -9.8</gravity>
+        <light name="sun" type="directional">
+            <cast_shadows>true</cast_shadows>
+            <pose>0 0 10 0 0 0</pose>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <attenuation>
+                <range>1000</range>
+                <constant>0.9</constant>
+                <linear>0.01</linear>
+                <quadratic>0.001</quadratic>
+            </attenuation>
+            <direction>-0.5 0.1 -0.9</direction>
+        </light>
+        <plugin filename="gz-sim-buoyancy-system" name="gz::sim::systems::Buoyancy">
+            <uniform_fluid_density>1000</uniform_fluid_density>
+        </plugin>
+        <scene>
+            <ambient>0.0 1.0 1.0 1</ambient>
+            <background>0.0 0.7 0.8 1</background>
+        </scene>
+        <light name="ambient" type="directional">
+            <cast_shadows>false</cast_shadows>
+            <pose>0 0 10 0 0 0</pose>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <direction>0.1 0.1 -0.9</direction>
+        </light>
+        <light name="point_light" type="point">
+            <cast_shadows>false</cast_shadows>
+            <pose>0 0 15 0 0 0</pose>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <attenuation>
+                <range>50</range>
+                <constant>0.5</constant>
+                <linear>0.01</linear>
+                <quadratic>0.001</quadratic>
+            </attenuation>
+        </light>
+        <include>
+            <uri>model://ground</uri>
+            <name>terrain</name>
+            <pose>0 0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>model://rock/Rock3</uri>
+            <name>rock_0</name>
+            <pose>102.7914 -67.0538 7.4300 0.1329 -0.0045 5.4877</pose>
+            <scale>0.932 0.932 0.932</scale>
+        </include>
+        <include>
+            <uri>model://rock/Rock1</uri>
+            <name>rock_1</name>
+            <pose>-106.2220 104.2130 2.3705 -0.0561 0.0634 4.5348</pose>
+            <scale>1.338 1.338 1.338</scale>
+        </include>
+        <include>
+            <uri>model://rock/Rock3</uri>
+            <name>rock_2</name>
+            <pose>102.5527 30.6824 26.0225 -0.1227 -0.0980 1.7251</pose>
+            <scale>1.207 1.207 1.207</scale>
+        </include>
+        <include>
+            <uri>model://rock/Rock1</uri>
+            <name>rock_3</name>
+            <pose>48.3342 -107.0451 16.0353 0.1204 -0.0667 5.4161</pose>
+            <scale>1.140 1.140 1.140</scale>
+        </include>
+        <include>
+            <uri>model://rock/Rock2</uri>
+            <name>rock_4</name>
+            <pose>-103.5414 -70.4525 16.5397 0.0987 -0.0835 3.7867</pose>
+            <scale>0.657 0.657 0.657</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_0</name>
+            <pose>-22.5566 87.5644 45.1883 0.0331 0.0319 2.0597</pose>
+            <scale>1.306 1.306 1.306</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_1</name>
+            <pose>33.9744 53.5625 46.7884 0.0231 0.0093 5.6780</pose>
+            <scale>0.960 0.960 0.960</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_2</name>
+            <pose>73.6479 12.6085 33.2612 -0.0156 -0.0073 6.1944</pose>
+            <scale>0.974 0.974 0.974</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_3</name>
+            <pose>-20.5449 101.7054 47.2401 0.0381 0.0356 1.3023</pose>
+            <scale>1.215 1.215 1.215</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_4</name>
+            <pose>59.4412 44.8784 41.1499 0.0345 -0.0010 3.1286</pose>
+            <scale>1.325 1.325 1.325</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_5</name>
+            <pose>61.5145 20.5300 37.1205 0.0130 -0.0381 1.4858</pose>
+            <scale>1.001 1.001 1.001</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree4</uri>
+            <name>tree_6</name>
+            <pose>46.2307 48.6802 45.3908 0.0167 -0.0309 4.0098</pose>
+            <scale>1.439 1.439 1.439</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree4</uri>
+            <name>tree_7</name>
+            <pose>44.1790 17.5644 41.0770 -0.0157 0.0232 5.6761</pose>
+            <scale>1.389 1.389 1.389</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_8</name>
+            <pose>56.9705 33.2427 39.8580 0.0354 0.0258 5.9736</pose>
+            <scale>0.925 0.925 0.925</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_9</name>
+            <pose>-93.8576 -25.3254 19.0884 0.0461 -0.0468 2.6022</pose>
+            <scale>0.954 0.954 0.954</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_10</name>
+            <pose>49.0832 62.7426 47.8998 -0.0107 -0.0255 2.6089</pose>
+            <scale>1.469 1.469 1.469</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree4</uri>
+            <name>tree_11</name>
+            <pose>67.8191 64.1036 44.1791 -0.0195 0.0497 2.6140</pose>
+            <scale>0.836 0.836 0.836</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree2</uri>
+            <name>tree_12</name>
+            <pose>70.1165 -70.5316 13.9172 -0.0384 -0.0482 4.8349</pose>
+            <scale>1.154 1.154 1.154</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_13</name>
+            <pose>-95.9640 -5.3538 18.6084 0.0278 0.0048 3.4929</pose>
+            <scale>1.361 1.361 1.361</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree2</uri>
+            <name>tree_14</name>
+            <pose>79.1483 64.3978 40.3244 -0.0098 0.0460 0.0350</pose>
+            <scale>1.308 1.308 1.308</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree2</uri>
+            <name>tree_15</name>
+            <pose>-5.9303 63.6066 49.0946 -0.0368 0.0013 3.9117</pose>
+            <scale>1.070 1.070 1.070</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree2</uri>
+            <name>tree_16</name>
+            <pose>21.5596 53.8204 47.3610 -0.0226 -0.0285 1.0714</pose>
+            <scale>1.343 1.343 1.343</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_17</name>
+            <pose>6.1895 51.3350 49.6439 -0.0218 -0.0191 5.7934</pose>
+            <scale>1.218 1.218 1.218</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_18</name>
+            <pose>100.8177 65.4042 33.2957 0.0196 0.0103 1.3749</pose>
+            <scale>1.230 1.230 1.230</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_19</name>
+            <pose>70.4454 54.6073 41.2128 0.0457 0.0077 2.0617</pose>
+            <scale>1.063 1.063 1.063</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree2</uri>
+            <name>tree_20</name>
+            <pose>-74.7939 72.0376 25.5029 -0.0045 0.0213 0.1935</pose>
+            <scale>0.824 0.824 0.824</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_21</name>
+            <pose>8.0786 60.7470 50.9012 0.0064 -0.0323 2.0083</pose>
+            <scale>1.133 1.133 1.133</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_22</name>
+            <pose>103.4710 -85.3724 3.7771 -0.0099 0.0086 4.0309</pose>
+            <scale>0.857 0.857 0.857</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_23</name>
+            <pose>-83.3332 -30.2618 22.8313 -0.0388 -0.0084 1.0832</pose>
+            <scale>1.061 1.061 1.061</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_24</name>
+            <pose>-80.6874 -45.6704 23.7690 -0.0465 0.0008 0.7259</pose>
+            <scale>0.919 0.919 0.919</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree2</uri>
+            <name>tree_25</name>
+            <pose>-92.6206 15.8231 20.5252 0.0134 0.0319 0.6628</pose>
+            <scale>1.269 1.269 1.269</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_26</name>
+            <pose>-43.2993 40.9002 33.1781 0.0038 0.0350 6.0684</pose>
+            <scale>1.094 1.094 1.094</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree2</uri>
+            <name>tree_27</name>
+            <pose>93.2873 99.2041 41.3948 0.0455 0.0418 1.3943</pose>
+            <scale>1.385 1.385 1.385</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree2</uri>
+            <name>tree_28</name>
+            <pose>93.9557 84.8670 38.9962 -0.0409 -0.0192 0.9161</pose>
+            <scale>1.392 1.392 1.392</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree2</uri>
+            <name>tree_29</name>
+            <pose>29.8431 42.3224 45.8767 0.0223 0.0047 0.0531</pose>
+            <scale>0.926 0.926 0.926</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree2</uri>
+            <name>tree_30</name>
+            <pose>-80.8886 -18.3603 23.6918 -0.0336 -0.0020 3.2512</pose>
+            <scale>1.256 1.256 1.256</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_31</name>
+            <pose>-94.2486 -16.4294 19.3761 -0.0264 -0.0292 1.7919</pose>
+            <scale>1.079 1.079 1.079</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree4</uri>
+            <name>tree_32</name>
+            <pose>-73.3383 -27.3988 29.8804 -0.0157 -0.0433 2.7046</pose>
+            <scale>1.147 1.147 1.147</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_33</name>
+            <pose>8.3580 82.6154 52.0491 0.0078 0.0422 1.0754</pose>
+            <scale>1.160 1.160 1.160</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_34</name>
+            <pose>22.1851 69.3737 48.9803 -0.0472 0.0395 3.1138</pose>
+            <scale>1.418 1.418 1.418</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_35</name>
+            <pose>16.5387 39.5641 45.9369 0.0409 -0.0055 2.6580</pose>
+            <scale>1.230 1.230 1.230</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree2</uri>
+            <name>tree_36</name>
+            <pose>0.4256 40.7967 49.2305 -0.0338 -0.0141 4.0328</pose>
+            <scale>0.975 0.975 0.975</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_37</name>
+            <pose>-61.7812 -40.0463 33.7726 0.0201 0.0103 4.9329</pose>
+            <scale>0.912 0.912 0.912</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree4</uri>
+            <name>tree_38</name>
+            <pose>68.0939 -31.0232 25.9119 0.0397 -0.0255 5.9597</pose>
+            <scale>1.025 1.025 1.025</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_39</name>
+            <pose>45.6982 77.6701 50.2870 -0.0429 0.0459 0.0090</pose>
+            <scale>1.238 1.238 1.238</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree3</uri>
+            <name>tree_40</name>
+            <pose>-56.3573 -29.3447 38.1741 -0.0241 0.0362 5.7783</pose>
+            <scale>1.225 1.225 1.225</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree2</uri>
+            <name>tree_41</name>
+            <pose>-106.2631 6.4552 12.2879 0.0059 0.0282 5.1184</pose>
+            <scale>0.817 0.817 0.817</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_42</name>
+            <pose>64.7629 -86.5959 12.4848 -0.0478 -0.0415 4.3641</pose>
+            <scale>1.226 1.226 1.226</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree4</uri>
+            <name>tree_43</name>
+            <pose>-69.9198 89.3620 26.8374 -0.0447 -0.0080 4.4427</pose>
+            <scale>0.835 0.835 0.835</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_44</name>
+            <pose>71.0498 -96.5261 7.6365 0.0057 0.0260 5.8365</pose>
+            <scale>0.989 0.989 0.989</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_45</name>
+            <pose>-87.3933 -9.4349 22.2291 0.0394 -0.0257 4.1080</pose>
+            <scale>0.879 0.879 0.879</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree4</uri>
+            <name>tree_46</name>
+            <pose>36.4287 70.9933 49.0973 -0.0047 -0.0393 5.4322</pose>
+            <scale>1.350 1.350 1.350</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_47</name>
+            <pose>-28.0578 98.2854 44.9947 0.0012 0.0203 3.5420</pose>
+            <scale>0.802 0.802 0.802</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_48</name>
+            <pose>-61.8880 -59.3699 32.4859 0.0118 -0.0488 2.8331</pose>
+            <scale>1.101 1.101 1.101</scale>
+        </include>
+        <include>
+            <uri>model://tree/Tree1</uri>
+            <name>tree_49</name>
+            <pose>28.6926 81.3844 49.9442 -0.0001 0.0151 1.0375</pose>
+            <scale>1.412 1.412 1.412</scale>
+        </include>
+        <include>
+            <uri>model://bush/Bush2</uri>
+            <name>bush_0</name>
+            <pose>-105.4651 4.1116 12.6973 0.0253 0.0198 3.0792</pose>
+            <scale>0.312 0.312 0.312</scale>
+        </include>
+        <include>
+            <uri>model://bush/Bush2</uri>
+            <name>bush_1</name>
+            <pose>-89.9138 -26.7644 20.4429 -0.0075 -0.0129 2.8535</pose>
+            <scale>0.327 0.327 0.327</scale>
+        </include>
+        <include>
+            <uri>model://bush/Bush2</uri>
+            <name>bush_2</name>
+            <pose>-91.2737 -8.5632 20.9666 0.0131 0.0100 5.2232</pose>
+            <scale>0.877 0.877 0.877</scale>
+        </include>
+        <include>
+            <uri>model://bush/Bush1</uri>
+            <name>bush_3</name>
+            <pose>20.4860 50.8334 47.2043 0.0239 0.0205 0.2609</pose>
+            <scale>0.654 0.654 0.654</scale>
+        </include>
+        <include>
+            <uri>model://bush/Bush3</uri>
+            <name>bush_4</name>
+            <pose>-64.4855 -37.1925 33.5243 0.0183 0.0264 1.2985</pose>
+            <scale>0.453 0.453 0.453</scale>
+        </include>
+        <include>
+            <uri>model://bush/Bush2</uri>
+            <name>bush_5</name>
+            <pose>43.6276 35.4924 44.0797 0.0079 -0.0227 1.5966</pose>
+            <scale>0.832 0.832 0.832</scale>
+        </include>
+        <include>
+            <uri>model://bush/Bush1</uri>
+            <name>bush_6</name>
+            <pose>71.6839 -32.9586 23.9131 -0.0144 0.0220 4.3406</pose>
+            <scale>0.434 0.434 0.434</scale>
+        </include>
+        <include>
+            <uri>model://bush/Bush2</uri>
+            <name>bush_7</name>
+            <pose>48.0124 -69.9747 25.7653 -0.0132 -0.0178 3.0438</pose>
+            <scale>0.866 0.866 0.866</scale>
+        </include>
+        <include>
+            <uri>model://bush/Bush2</uri>
+            <name>bush_8</name>
+            <pose>-76.3943 96.1230 24.6155 -0.0288 -0.0255 0.9369</pose>
+            <scale>0.786 0.786 0.786</scale>
+        </include>
+        <include>
+            <uri>model://bush/Bush3</uri>
+            <name>bush_9</name>
+            <pose>19.6844 69.4396 49.2330 -0.0189 -0.0158 1.2304</pose>
+            <scale>0.549 0.549 0.549</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_0</name>
+            <pose>-105.6879 7.9676 13.0621 0.0000 0.0000 3.1248</pose>
+            <scale>0.316 0.316 0.316</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_1</name>
+            <pose>97.5983 105.1622 41.0842 0.0000 0.0000 0.4130</pose>
+            <scale>0.278 0.278 0.278</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_2</name>
+            <pose>76.6701 61.5287 40.5003 0.0000 0.0000 0.3425</pose>
+            <scale>0.362 0.362 0.362</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_3</name>
+            <pose>31.8560 56.7463 47.1322 0.0000 0.0000 1.8413</pose>
+            <scale>0.255 0.255 0.255</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass3</uri>
+            <name>grass_4</name>
+            <pose>63.6697 -10.9796 33.3947 0.0000 0.0000 5.4796</pose>
+            <scale>0.254 0.254 0.254</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass3</uri>
+            <name>grass_5</name>
+            <pose>37.0817 -2.3122 40.4652 0.0000 0.0000 3.2304</pose>
+            <scale>0.544 0.544 0.544</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_6</name>
+            <pose>-7.8663 65.7576 48.6463 0.0000 0.0000 5.6411</pose>
+            <scale>0.369 0.369 0.369</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_7</name>
+            <pose>-18.9397 -40.7072 37.1820 0.0000 0.0000 2.0238</pose>
+            <scale>0.321 0.321 0.321</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_8</name>
+            <pose>41.2842 6.9069 40.4718 0.0000 0.0000 6.1621</pose>
+            <scale>0.207 0.207 0.207</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_9</name>
+            <pose>-22.1165 102.2543 47.0036 0.0000 0.0000 5.3175</pose>
+            <scale>0.517 0.517 0.517</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass3</uri>
+            <name>grass_10</name>
+            <pose>-31.9526 -29.4982 43.5274 0.0000 0.0000 5.2215</pose>
+            <scale>0.522 0.522 0.522</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_11</name>
+            <pose>-91.7460 -31.0925 19.9164 0.0000 0.0000 5.1843</pose>
+            <scale>0.314 0.314 0.314</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_12</name>
+            <pose>6.0880 61.1807 51.3202 0.0000 0.0000 4.6300</pose>
+            <scale>0.582 0.582 0.582</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_13</name>
+            <pose>-60.1383 8.3404 33.2749 0.0000 0.0000 4.0293</pose>
+            <scale>0.493 0.493 0.493</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_14</name>
+            <pose>7.1099 59.6343 50.7734 0.0000 0.0000 1.7444</pose>
+            <scale>0.576 0.576 0.576</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_15</name>
+            <pose>-22.4159 86.5383 45.0919 0.0000 0.0000 1.0781</pose>
+            <scale>0.266 0.266 0.266</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_16</name>
+            <pose>69.7818 -33.7298 24.4518 0.0000 0.0000 1.9046</pose>
+            <scale>0.519 0.519 0.519</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_17</name>
+            <pose>-91.1578 -27.6450 20.1038 0.0000 0.0000 0.5989</pose>
+            <scale>0.537 0.537 0.537</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_18</name>
+            <pose>-3.6991 66.3815 50.1908 0.0000 0.0000 3.5049</pose>
+            <scale>0.507 0.507 0.507</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_19</name>
+            <pose>-68.5891 84.6609 27.6730 0.0000 0.0000 4.6851</pose>
+            <scale>0.310 0.310 0.310</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_20</name>
+            <pose>14.5280 35.4375 45.6128 0.0000 0.0000 3.3789</pose>
+            <scale>0.515 0.515 0.515</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_21</name>
+            <pose>-92.0655 -46.6755 20.0625 0.0000 0.0000 1.2514</pose>
+            <scale>0.502 0.502 0.502</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_22</name>
+            <pose>96.4616 96.2030 39.9374 0.0000 0.0000 5.3781</pose>
+            <scale>0.285 0.285 0.285</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass3</uri>
+            <name>grass_23</name>
+            <pose>-68.0767 -69.0023 28.6402 0.0000 0.0000 0.8820</pose>
+            <scale>0.241 0.241 0.241</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_24</name>
+            <pose>-94.5529 -6.7074 19.4766 0.0000 0.0000 0.6720</pose>
+            <scale>0.410 0.410 0.410</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_25</name>
+            <pose>57.8470 -13.7152 34.3800 0.0000 0.0000 0.1268</pose>
+            <scale>0.365 0.365 0.365</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass3</uri>
+            <name>grass_26</name>
+            <pose>9.9660 58.7285 50.0393 0.0000 0.0000 3.6431</pose>
+            <scale>0.477 0.477 0.477</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_27</name>
+            <pose>-51.1605 104.0603 36.2066 0.0000 0.0000 1.6268</pose>
+            <scale>0.538 0.538 0.538</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_28</name>
+            <pose>-72.7575 -28.2611 30.2486 0.0000 0.0000 3.9958</pose>
+            <scale>0.510 0.510 0.510</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_29</name>
+            <pose>73.4134 -33.0601 23.0745 0.0000 0.0000 4.5075</pose>
+            <scale>0.494 0.494 0.494</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_30</name>
+            <pose>24.8030 70.8301 49.0136 0.0000 0.0000 1.4596</pose>
+            <scale>0.390 0.390 0.390</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass3</uri>
+            <name>grass_31</name>
+            <pose>48.9840 48.5623 44.9861 0.0000 0.0000 4.3412</pose>
+            <scale>0.471 0.471 0.471</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_32</name>
+            <pose>-91.2370 -43.0192 20.0736 0.0000 0.0000 2.1959</pose>
+            <scale>0.502 0.502 0.502</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_33</name>
+            <pose>97.0782 -34.8433 15.1636 0.0000 0.0000 2.1103</pose>
+            <scale>0.513 0.513 0.513</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_34</name>
+            <pose>-21.6728 20.6090 42.3890 0.0000 0.0000 3.2785</pose>
+            <scale>0.456 0.456 0.456</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_35</name>
+            <pose>-63.7515 3.3853 31.8116 0.0000 0.0000 3.6509</pose>
+            <scale>0.512 0.512 0.512</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_36</name>
+            <pose>58.6827 45.7201 41.6694 0.0000 0.0000 1.7144</pose>
+            <scale>0.293 0.293 0.293</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_37</name>
+            <pose>24.5108 95.9999 51.6953 0.0000 0.0000 2.2068</pose>
+            <scale>0.383 0.383 0.383</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_38</name>
+            <pose>-63.9285 -43.9387 32.5867 0.0000 0.0000 3.9237</pose>
+            <scale>0.409 0.409 0.409</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass3</uri>
+            <name>grass_39</name>
+            <pose>54.6726 31.1774 40.8094 0.0000 0.0000 2.3223</pose>
+            <scale>0.550 0.550 0.550</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass3</uri>
+            <name>grass_40</name>
+            <pose>66.2106 -30.6547 26.7725 0.0000 0.0000 1.8265</pose>
+            <scale>0.389 0.389 0.389</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass3</uri>
+            <name>grass_41</name>
+            <pose>28.7979 -53.7923 34.7842 0.0000 0.0000 5.8388</pose>
+            <scale>0.230 0.230 0.230</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_42</name>
+            <pose>-67.9721 69.3031 26.8130 0.0000 0.0000 4.8802</pose>
+            <scale>0.559 0.559 0.559</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_43</name>
+            <pose>74.6042 82.4886 45.6611 0.0000 0.0000 2.8365</pose>
+            <scale>0.234 0.234 0.234</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_44</name>
+            <pose>36.4361 50.7522 46.2085 0.0000 0.0000 3.7189</pose>
+            <scale>0.432 0.432 0.432</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_45</name>
+            <pose>-6.6109 42.5659 47.8516 0.0000 0.0000 3.0372</pose>
+            <scale>0.426 0.426 0.426</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass2</uri>
+            <name>grass_46</name>
+            <pose>50.1105 -47.1206 29.0588 0.0000 0.0000 0.9512</pose>
+            <scale>0.235 0.235 0.235</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_47</name>
+            <pose>-81.2369 -46.8460 23.7213 0.0000 0.0000 3.9315</pose>
+            <scale>0.529 0.529 0.529</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass1</uri>
+            <name>grass_48</name>
+            <pose>84.4558 -90.2714 5.5363 0.0000 0.0000 0.8466</pose>
+            <scale>0.245 0.245 0.245</scale>
+        </include>
+        <include>
+            <uri>model://grass/Grass3</uri>
+            <name>grass_49</name>
+            <pose>2.4171 -17.3295 39.7405 0.0000 0.0000 1.4828</pose>
+            <scale>0.558 0.558 0.558</scale>
+        </include>
+    </world>
+</sdf>

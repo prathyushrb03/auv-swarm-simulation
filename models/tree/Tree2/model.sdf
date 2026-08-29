@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+    <model name="Tree2">
+        <static>true</static>
+        <link name="link">
+            <collision name="collision">
+                <geometry>
+                    <mesh><uri>mesh/Tree2_collision.glb</uri></mesh>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <mesh><uri>mesh/Tree2.glb</uri></mesh>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+</sdf>
